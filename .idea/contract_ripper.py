@@ -60,9 +60,8 @@ def completed():
         item_no+=1
         try:
             parsed = usaddress.tag(p[0] + ';' + p[2] + ';' + p[4] + '\n')
-            a = str(parsed)
+            a = (p[0] + ';' +p[2]+';'+ p[4]+'\n')
             s+=a
-            #print(parsed[0])
         except:
             error_count +=1
             print(str(item_no)+"error" + str(p))
@@ -70,6 +69,8 @@ def completed():
     print('Addresses Parsed: '+ str(item_no))
     print('Number of Errors: ' + str(error_count))
         #print(parsed[0][0])
+
+
 
     text_file = open("/home/evan/Desktop/out.csv", "w")
     text_file.write(s)
